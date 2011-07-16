@@ -14,7 +14,7 @@ use Rack::ShowExceptions
 
 run HttpRouter.new {
 	get('/?').head.to { |env|
-		require 'repeat'
-		[200, {'Content-Type' => 'text/html'}, AdverbRepeat.new(env).render]
+		require 'display'
+		[200, {'Content-Type' => 'text/html'}, TorrentDisplay.new(env).render]
 	}
 }

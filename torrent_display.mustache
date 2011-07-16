@@ -1,0 +1,25 @@
+<html>
+	<head>
+		<title> {{title}} </title>
+	<head>
+
+	<body>
+		<form action="/" method="GET">
+			<input type="text" name="q" value="{{query}}"/>
+			<input type="submit" value="Search" />
+		</form>
+		{{^list_empty}}
+			<table>
+			<tr>
+				<th> Title </th>
+				<th> Size </th>
+			</tr>
+			{{#list}}
+				<tr>
+					<td> {{title}} </td>
+					<td> {{size}}  </td>
+				</tr>
+			{{/list}}
+		{{/list_empty}}
+	</body>
+</html>
