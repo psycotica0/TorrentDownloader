@@ -5,6 +5,7 @@
 	<body>
 		<p> Download &quot;{{name}}&quot; </p>
 		<form action="/download" method="post">
+			<input type="hidden" name="name" value="{{name}}" />
 			<input type="hidden" name="enclosure_url" value="{{enclosure_url}}" />
 			<input type="hidden" name="hash" value="{{hash}}" />
 			<select name="type">

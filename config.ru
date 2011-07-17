@@ -21,4 +21,8 @@ run HttpRouter.new {
 		require 'info'
 		[200, {'Content-Type' => 'text/html'}, TorrentInfo.new(env).render]
 	}
+	post('/download').to { |env|
+		require 'download'
+		[202, {'Content-Type' => 'text/html'}, TorrentDownload.new(env).render]
+	}
 }
