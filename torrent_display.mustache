@@ -13,11 +13,19 @@
 			<tr>
 				<th> Title </th>
 				<th> Size </th>
+				<th> Files </th>
+				<th> Seeders </th>
+				<th> Leechers </th>
+				<th> Votes </th>
 			</tr>
 			{{#list}}
 				<tr>
 					<td> {{title}} </td>
 					<td> {{size}}  </td>
+					<td> {{files}} </td>
+					<td> {{Seeds}} </td>
+					<td> {{leechers}} </td>
+					<td> {{votes}} </td>
 				</tr>
 			{{/list}}
 		{{/list_empty}}
