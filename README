@@ -1,0 +1,3 @@
+This is a Rack App that uses the isohunt API to search for and download torrent files.
+
+It's meant to be part of a larger system that automatically consumes torrent files from a directory, etc.
