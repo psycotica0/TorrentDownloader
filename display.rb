@@ -18,6 +18,10 @@ class TorrentDisplay < Mustache
 		@query = query
 		open("http://isohunt.com/js/json.php?ihq=" + URI.escape(query) + "&rows=20") { |file|
 			@list = JSON::parse(file.read)["items"]["list"]
+			# Add the info link
+			@list.each { |item|
+				item["info_link"] = "/info?title=" + URI.escape(item["title"]) + "&enclosure_url=" + URI.escape(item["enclosure_url"]) + "&link=" + URI.escape(item["link"])
+			}
 		}
 	end
 

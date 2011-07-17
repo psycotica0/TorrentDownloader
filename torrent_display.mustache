@@ -17,15 +17,17 @@
 				<th> Seeders </th>
 				<th> Leechers </th>
 				<th> Votes </th>
+				<th> Date Posted </th>
 			</tr>
 			{{#list}}
 				<tr>
-					<td> {{title}} </td>
+					<td> <a href="{{info_link}}">{{title}}</a></td>
 					<td> {{size}}  </td>
 					<td> {{files}} </td>
 					<td> {{Seeds}} </td>
 					<td> {{leechers}} </td>
 					<td> {{votes}} </td>
+					<td> {{pubDate}} </td>
 				</tr>
 			{{/list}}
 		{{/list_empty}}
