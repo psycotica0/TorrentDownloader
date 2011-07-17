@@ -17,4 +17,8 @@ run HttpRouter.new {
 		require 'display'
 		[200, {'Content-Type' => 'text/html'}, TorrentDisplay.new(env).render]
 	}
+	get('/info').head.to { |env|
+		require 'info'
+		[200, {'Content-Type' => 'text/html'}, TorrentInfo.new(env).render]
+	}
 }
