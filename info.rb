@@ -1,7 +1,7 @@
 require 'mustache'
 
 class TorrentInfo < Mustache
-	attr_reader :title, :name, :enclosure_url, :link
+	attr_reader :title, :name, :enclosure_url, :link, :hash
 	def initialize(env)
 		req = Rack::Request.new(env)
 		@title = "Torrent Info"
@@ -10,6 +10,7 @@ class TorrentInfo < Mustache
 			@name = req.GET["title"]
 			@enclosure_url = req.GET["enclosure_url"]
 			@link = req.GET["link"]
+			@hash = req.GET["hash"]
 		end
 	end
 
