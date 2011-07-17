@@ -5,6 +5,8 @@ require 'open-uri'
 require 'uri'
 
 class TorrentDisplay < Mustache
+	attr_reader :query, :list, :title
+
 	def initialize(env)
 		@title = "Mediabox Search"
 		req = Rack::Request.new(env)
@@ -25,20 +27,8 @@ class TorrentDisplay < Mustache
 		}
 	end
 
-	def query
-		@query
-	end
-
-	def list
-		@list
-	end
-
 	def list_empty
 		@list.nil?
-	end
-
-	def title
-		@title
 	end
 
 	def template_file
